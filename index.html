@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Science</title>
+  <title>Markdown Viewer - Dark Mode</title>
   <style>
     /* Global Reset and Dark Background */
     body, html {
@@ -10,7 +10,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;  /* Black background */
+      background-color: #121212;  /* Deep black background */
       color: #f0f0f0;
     }
     /* Centered Container with a Modern GUI */
@@ -61,18 +61,16 @@
     Loading...
   </div>
   
-  <!-- Include marked.js from a CDN for Markdown conversion -->
+  <!-- Include Marked.js from a CDN for Markdown conversion -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    // Configure marked to automatically generate IDs for headings 
-    // so that internal anchor links work properly.
+    // Configure Marked options for heading IDs and disable mangle
     marked.setOptions({
       headerIds: true,
       mangle: false
     });
     
-    // Fetch the markdown file (info.md), convert its content to HTML,
-    // and display the result in the preview container.
+    // Fetch the markdown file "info.md", convert its content to HTML, and display it
     fetch('info.md')
       .then(response => {
         if (!response.ok) {
@@ -81,7 +79,9 @@
         return response.text();
       })
       .then(mdText => {
-        document.getElementById('preview').innerHTML = marked(mdText);
+        // Use the new API: call marked.parse() to convert Markdown into HTML
+        const html = marked.parse(mdText);
+        document.getElementById('preview').innerHTML = html;
       })
       .catch(error => {
         document.getElementById('preview').innerHTML = '<p>Error loading Markdown content.</p>';
