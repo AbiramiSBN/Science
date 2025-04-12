@@ -1,7 +1,3 @@
-Great! I’ll compile a comprehensive Markdown file covering all major scientific disciplines, including physics, chemistry, biology, earth science, astronomy, and interdisciplinary areas like environmental and computational science. Each branch will include detailed subfields, real-world applications, and human relevance. I’ll also add a clickable table of contents and reference sources like Wikipedia, academic sites, and scientific institutions.
-
-I’ll let you know when the document is ready for review.
-
 # Comprehensive Guide to Scientific Disciplines
 
 ## Table of Contents
